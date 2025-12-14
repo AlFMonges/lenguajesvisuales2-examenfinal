@@ -4,8 +4,6 @@ Aplicación web interactiva de trivia desarrollada con React y Bootstrap, que pe
 
 ## 📋 Descripción del Proyecto
 
-Este proyecto corresponde al **Trabajo Final de Lenguajes Visuales II** (Proyecto #19: Trivia de cultura general) y cumple con todos los requerimientos solicitados:
-
 - ✅ Preguntas aleatorias desde JSON
 - ✅ Sistema de opciones múltiples
 - ✅ Contador de aciertos en tiempo real
@@ -18,25 +16,25 @@ Este proyecto corresponde al **Trabajo Final de Lenguajes Visuales II** (Proyect
 1. **Registro de Jugador**: Ingreso del nombre antes de comenzar
 2. **Sistema de Preguntas**: 10 preguntas aleatorias por partida
 3. **Feedback Inmediato**: Indicación visual de respuestas correctas/incorrectas
-4. **Avance Automático**: Transición automática después de 5 segundos
+4. **Avance Automático**: Transición automática. Manejo de tiempos según el resultado
 5. **Contador en Tiempo Real**: Visualización constante del puntaje
 6. **Preguntas No Repetidas**: Sistema que evita preguntas duplicadas en reintentos
 7. **Historial Persistente**: Registro de todos los intentos de cada jugador
-8. **Sistema de Búsqueda**: Filtrado por nombre y puntaje mínimo
+8. **Sistema de Búsqueda**: Filtrado por nombre, puntaje máximo y puntaje por intento
 9. **Destacado del Mejor**: Identificación visual del jugador con mayor puntaje
 
 ## 🛠️ Tecnologías Utilizadas
 
-- **React 18.2.0**: Framework principal para la interfaz de usuario
-- **Bootstrap 5.3.2**: Framework CSS para estilos responsivos
-- **JSON Server 0.17.4**: Simulación de API REST
-- **JavaScript ES6+**: Lenguaje de programación
+- **React**: Framework principal para la interfaz de usuario
+- **Bootstrap**: Framework CSS para estilos responsivos
+- **JSON Server**: Simulación de API REST
+- **JavaScript**: Lenguaje de programación
 
 ## 📦 Requisitos Previos
 
-Antes de ejecutar el proyecto, asegúrate de tener instalado:
+Antes de ejecutar el proyecto, asegurearse de tener instalado:
 
-- **Node.js** (versión 14 o superior) - [Descargar aquí](https://nodejs.org/)
+- **Node.js** (versión 14 o superior)
 - **npm** (se instala automáticamente con Node.js)
 
 ## 🚀 Instalación
@@ -46,7 +44,7 @@ Sigue estos pasos para configurar el proyecto en tu máquina local:
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/trivia-cultura-general.git
+git clone https://github.com/AlFMonges/lenguajesvisuales2-examenfinal.git
 cd trivia-cultura-general
 ```
 
@@ -68,7 +66,7 @@ trivia-cultura-general/
 │   └── index.css           # Estilos globales
 ├── db.json                 # Base de datos JSON (preguntas y jugadores)
 ├── package.json            # Dependencias del proyecto
-└── README.md              # Este archivo
+└── README.md               # Este archivo
 ```
 
 ## ▶️ Ejecución
@@ -93,31 +91,6 @@ La aplicación se abrirá automáticamente en `http://localhost:3000`
 
 > **Nota**: Ambos servidores deben estar ejecutándose al mismo tiempo para que la aplicación funcione correctamente.
 
-## 📊 Estructura de Datos (db.json)
-
-### Preguntas
-
-```json
-{
-  "id": 1,
-  "question": "¿Cuál es la capital de Francia?",
-  "options": ["Londres", "París", "Madrid", "Berlín"],
-  "correctAnswer": "París"
-}
-```
-
-### Jugadores
-
-```json
-{
-  "id": 1,
-  "name": "Juan Pérez",
-  "attempts": [7, 8, 9],
-  "maxScore": 9,
-  "bestAttempt": 3
-}
-```
-
 ## 🎮 Uso de la Aplicación
 
 ### 1. Inicio
@@ -129,7 +102,7 @@ La aplicación se abrirá automáticamente en `http://localhost:3000`
 - Selecciona una respuesta haciendo clic en ella
 - Observa el feedback visual (verde = correcto, rojo = incorrecto)
 - El contador de aciertos se actualiza automáticamente
-- La aplicación avanza a la siguiente pregunta después de 5 segundos
+- La aplicación avanza a la siguiente pregunta (1 segundo después si es correcta, 3 segundos después si es incorrecta)
 
 ### 3. Resultados
 - Al finalizar, verás tu puntaje total
@@ -139,7 +112,8 @@ La aplicación se abrirá automáticamente en `http://localhost:3000`
 
 ### 4. Historial
 - **Búsqueda por nombre**: Filtra jugadores específicos
-- **Filtro por puntaje**: Muestra jugadores con puntaje mínimo
+- **Filtro por puntaje máximo**: Muestra jugadores con puntaje máximo
+- **Filtro por puntaje**: Muestra jugadores con un puntaje específico obtenido en cualquier intento
 - **Identificación del mejor**: El jugador con mayor puntaje aparece destacado con una corona 👑
 
 ## 🧩 Componentes
@@ -170,34 +144,6 @@ Componente principal que orquesta el flujo de la aplicación y maneja el estado 
 - **Animaciones Suaves**: Transiciones visuales para mejor experiencia de usuario
 - **Accesibilidad**: Estructura semántica y contraste de colores adecuado
 
-## 📝 Funcionalidades Extra Implementadas
-
-Además de los requerimientos básicos, se implementaron las siguientes mejoras:
-
-- ✅ Sistema de prevención de preguntas repetidas en reintentos
-- ✅ Registro histórico completo de todos los intentos
-- ✅ Filtros dinámicos en el historial (nombre y puntaje)
-- ✅ Identificación visual del mejor jugador
-- ✅ Contador en tiempo real
-- ✅ Validación de entrada de nombre
-- ✅ Feedback visual inmediato en respuestas
-- ✅ Mensajes motivacionales según el puntaje obtenido
-
-## 🔧 Scripts Disponibles
-
-```bash
-# Iniciar la aplicación React
-npm start
-
-# Iniciar JSON Server
-npm run server
-
-# Crear build de producción
-npm run build
-
-# Ejecutar tests
-npm test
-```
 
 ## 📱 Compatibilidad
 
@@ -206,38 +152,3 @@ npm test
 - Safari (última versión)
 - Edge (última versión)
 - Dispositivos móviles (iOS y Android)
-
-## 🐛 Solución de Problemas
-
-### Error: "Cannot GET /questions"
-**Solución**: Asegúrate de que JSON Server esté ejecutándose en el puerto 3001.
-
-### Error: "Port 3000 is already in use"
-**Solución**: Cierra otras aplicaciones que usen el puerto 3000 o cambia el puerto con `PORT=3001 npm start`.
-
-### Las preguntas no se cargan
-**Solución**: Verifica que el archivo `db.json` exista en la raíz del proyecto y que JSON Server esté corriendo.
-
-## 📄 Licencia
-
-Este proyecto fue desarrollado con fines académicos para el curso de Lenguajes Visuales II.
-
-## 👨‍💻 Autor
-
-**[Tu Nombre Completo]**
-- Carrera: Ingeniería en Sistemas / Informática
-- Institución: UNINORTE
-- Año: 2025
-- Proyecto: #19 - Trivia de Cultura General
-
-## 📚 Referencias
-
-- [Documentación de React](https://react.dev/)
-- [Bootstrap Documentation](https://getbootstrap.com/)
-- [JSON Server](https://github.com/typicode/json-server)
-
----
-
-**Docente**: Ing. Milciades Gonzalez Dominguez  
-**Materia**: Lenguajes Visuales II  
-**Año**: 2025
