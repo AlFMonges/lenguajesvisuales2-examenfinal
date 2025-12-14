@@ -1,0 +1,280 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "¿Cuál es la capital de Francia?",
+      "options": [
+        "Londres",
+        "París",
+        "Madrid",
+        "Berlín"
+      ],
+      "correctAnswer": "París"
+    },
+    {
+      "id": 2,
+      "question": "¿En qué año llegó el hombre a la Luna?",
+      "options": [
+        "1965",
+        "1969",
+        "1972",
+        "1980"
+      ],
+      "correctAnswer": "1969"
+    },
+    {
+      "id": 3,
+      "question": "¿Quién pintó la Mona Lisa?",
+      "options": [
+        "Van Gogh",
+        "Picasso",
+        "Leonardo da Vinci",
+        "Rembrandt"
+      ],
+      "correctAnswer": "Leonardo da Vinci"
+    },
+    {
+      "id": 4,
+      "question": "¿Cuál es el planeta más grande del sistema solar?",
+      "options": [
+        "Saturno",
+        "Júpiter",
+        "Neptuno",
+        "Urano"
+      ],
+      "correctAnswer": "Júpiter"
+    },
+    {
+      "id": 5,
+      "question": "¿Cuántos continentes existen?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "correctAnswer": "7"
+    },
+    {
+      "id": 6,
+      "question": "¿Qué animal es conocido como el rey de la selva?",
+      "options": [
+        "Tigre",
+        "León",
+        "Leopardo",
+        "Jaguar"
+      ],
+      "correctAnswer": "León"
+    },
+    {
+      "id": 7,
+      "question": "¿Cuál es el océano más grande del mundo?",
+      "options": [
+        "Atlántico",
+        "Índico",
+        "Pacífico",
+        "Ártico"
+      ],
+      "correctAnswer": "Pacífico"
+    },
+    {
+      "id": 8,
+      "question": "¿En qué país se encuentra la Torre Eiffel?",
+      "options": [
+        "Italia",
+        "España",
+        "Francia",
+        "Alemania"
+      ],
+      "correctAnswer": "Francia"
+    },
+    {
+      "id": 9,
+      "question": "¿Cuál es el idioma más hablado en el mundo?",
+      "options": [
+        "Inglés",
+        "Español",
+        "Chino mandarín",
+        "Hindi"
+      ],
+      "correctAnswer": "Chino mandarín"
+    },
+    {
+      "id": 10,
+      "question": "¿Quién escribió Don Quijote de la Mancha?",
+      "options": [
+        "Gabriel García Márquez",
+        "Miguel de Cervantes",
+        "Pablo Neruda",
+        "Federico García Lorca"
+      ],
+      "correctAnswer": "Miguel de Cervantes"
+    },
+    {
+      "id": 11,
+      "question": "¿Cuál es el río más largo del mundo?",
+      "options": [
+        "Nilo",
+        "Amazonas",
+        "Yangtsé",
+        "Misisipi"
+      ],
+      "correctAnswer": "Amazonas"
+    },
+    {
+      "id": 12,
+      "question": "¿En qué año comenzó la Segunda Guerra Mundial?",
+      "options": [
+        "1939",
+        "1941",
+        "1945",
+        "1937"
+      ],
+      "correctAnswer": "1939"
+    },
+    {
+      "id": 13,
+      "question": "¿Cuál es el metal más abundante en la corteza terrestre?",
+      "options": [
+        "Hierro",
+        "Cobre",
+        "Aluminio",
+        "Oro"
+      ],
+      "correctAnswer": "Aluminio"
+    },
+    {
+      "id": 14,
+      "question": "¿Cuántos huesos tiene el cuerpo humano adulto?",
+      "options": [
+        "206",
+        "256",
+        "186",
+        "216"
+      ],
+      "correctAnswer": "206"
+    },
+    {
+      "id": 15,
+      "question": "¿Qué vitamina se obtiene principalmente del sol?",
+      "options": [
+        "Vitamina A",
+        "Vitamina C",
+        "Vitamina D",
+        "Vitamina E"
+      ],
+      "correctAnswer": "Vitamina D"
+    },
+    {
+      "id": 16,
+      "question": "¿Cuál es la montaña más alta del mundo?",
+      "options": [
+        "K2",
+        "Everest",
+        "Kilimanjaro",
+        "Aconcagua"
+      ],
+      "correctAnswer": "Everest"
+    },
+    {
+      "id": 17,
+      "question": "¿En qué país se originó el tango?",
+      "options": [
+        "Brasil",
+        "Argentina",
+        "Uruguay",
+        "Chile"
+      ],
+      "correctAnswer": "Argentina"
+    },
+    {
+      "id": 18,
+      "question": "¿Cuál es el elemento químico con símbolo 'O'?",
+      "options": [
+        "Oro",
+        "Oxígeno",
+        "Osmio",
+        "Óxido"
+      ],
+      "correctAnswer": "Oxígeno"
+    },
+    {
+      "id": 19,
+      "question": "¿Quién fue el primer presidente de Estados Unidos?",
+      "options": [
+        "Thomas Jefferson",
+        "Abraham Lincoln",
+        "George Washington",
+        "Benjamin Franklin"
+      ],
+      "correctAnswer": "George Washington"
+    },
+    {
+      "id": 20,
+      "question": "¿Cuál es el deporte más popular del mundo?",
+      "options": [
+        "Baloncesto",
+        "Fútbol",
+        "Béisbol",
+        "Tenis"
+      ],
+      "correctAnswer": "Fútbol"
+    }
+  ],
+  "players": [
+    {
+      "id": "50d6",
+      "name": "Alcides",
+      "attempts": [
+        6,
+        7,
+        8,
+        7,
+        5
+      ],
+      "maxScore": 8,
+      "bestAttempt": 3
+    },
+    {
+      "id": "c365",
+      "name": "Fernando",
+      "attempts": [
+        9,
+        0,
+        10
+      ],
+      "maxScore": 10,
+      "bestAttempt": 3
+    },
+    {
+      "id": "b933",
+      "name": "minerva",
+      "attempts": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "maxScore": 10,
+      "bestAttempt": 4
+    },
+    {
+      "id": "d8bb",
+      "name": "Alcides Fernando",
+      "attempts": [
+        10
+      ],
+      "maxScore": 10,
+      "bestAttempt": 1
+    },
+    {
+      "id": "b7bf",
+      "name": "marlene",
+      "attempts": [
+        6
+      ],
+      "maxScore": 6,
+      "bestAttempt": 1
+    }
+  ]
+}
