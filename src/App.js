@@ -28,6 +28,12 @@ const api = {
       body: JSON.stringify(playerData)
     });
     return response.json();
+  },
+  deleteAllPlayers: async () => {
+    const players = await api.getPlayers();
+      await Promise.all(players.map(player => 
+      fetch(`${API_URL}/players/${player.id}`, { method: 'DELETE' })
+    ));
   }
 };
 
@@ -191,12 +197,17 @@ const Results = ({ playerName, score, total, onRetry, onViewHistory }) => (
             <div className="display-1 text-success mb-4">
               {score}/{total}
             </div>
-            <h4 className="mb-4">
-              {score === total ? '¡Perfecto! 🌟' : 
-               score >= total * 0.7 ? '¡Muy bien! 👏' : 
-               score >= total * 0.5 ? 'Bien hecho 👍' : 
+            <h2 className="mb-4">
+              {score === total ? (
+                <>
+                ¡Excelente!🌟<br />
+                ¡Felicitaciones! 👏 
+                </>): 
+               score >= total * 0.9 ? '¡Casi perfecto! 👏' :
+               score >= total * 0.7 ? '¡Muy bien! 👏' :
+               score >= total * 0.5 ? 'Estuvo bien 👍' : 
                '¡Sigue intentando! 💪'}
-            </h4>
+            </h2>
             <div className="d-grid gap-2">
               <button className="btn btn-primary btn-lg" onClick={onRetry}>
                 🔄 Intentar de Nuevo
@@ -228,6 +239,16 @@ const PlayerHistory = ({ onBack }) => {
     setPlayers(data);
   };
 
+  const handleDeleteAll = async () => {
+  if (window.confirm('¿Estás seguro de que deseas eliminar todos los registros? Esta acción no se puede deshacer.')) {
+    await api.deleteAllPlayers();
+    setPlayers([]);
+    setSearchTerm('');
+    setExactScore('');
+    setMaxScore('');
+  }
+};
+
   const filteredPlayers = players.filter(player => {
     const matchesName = player.name.toLowerCase().includes(searchTerm.toLowerCase());
     // Filtro exacto: verifica si el jugador tiene ese puntaje en algún intento
@@ -249,7 +270,12 @@ const PlayerHistory = ({ onBack }) => {
       <div className="card shadow-lg">
         <div className="card-header bg-primary text-white d-flex justify-content-between align-items-center">
           <h3 className="mb-0">📊 Historial de Participantes</h3>
-          <button className="btn btn-light" onClick={onBack}>← Volver</button>
+          <div>
+            <button className="btn btn-secondary me-2" onClick={handleDeleteAll}>
+              🗑️ Borrar Todo
+            </button>
+            <button className="btn btn-light" onClick={onBack}>← Volver</button>
+          </div>
         </div>
         <div className="card-body p-4">
           <div className="row mb-4">
